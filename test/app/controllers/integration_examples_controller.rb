@@ -34,4 +34,8 @@ class IntegrationExamplesController < ActionController::Base
   def products
     @products = [OpenStruct.new(name: "Radio clock"), OpenStruct.new(name: "Mints")]
   end
+
+  def posts
+    @posts = [Post.new(title: "Foo"), Post.new(title: "Bar")]
+  end
 end

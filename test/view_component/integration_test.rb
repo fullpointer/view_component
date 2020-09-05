@@ -330,6 +330,15 @@ class IntegrationTest < ActionDispatch::IntegrationTest
     assert_select("p", text: "Mints counter: 2")
   end
 
+  test "renders collections with active record model" do
+    get "/posts"
+
+    assert_select("h1", text: "Today's Posts")
+    assert_select("h1", text: "Post", count: 2)
+    assert_select("h2", text: "Foo")
+    assert_select("h2", text: "Bar")
+  end
+
   test "renders the previews in the configured route" do
     with_preview_route("/previews") do
       get "/previews"

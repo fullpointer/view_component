@@ -3,6 +3,7 @@
 module ViewComponent
   class Collection
     def render_in(view_context, &block)
+
       iterator = ActionView::PartialIteration.new(@collection.size)
 
       @component.compile(raise_errors: true)
